@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import { Blocks } from 'react-loader-spinner';
 import { Gallery } from './ImageGallery.styled';
@@ -8,6 +9,11 @@ import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 import Button from 'components/Button/Button';
 
 export default class ImageGallery extends Component {
+  static propTypes = {
+    imageName: PropTypes.string.isRequired,
+    onClick: PropTypes.func.isRequired,
+  };
+
   state = {
     images: null,
     total: null,
